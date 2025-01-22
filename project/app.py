@@ -5,7 +5,7 @@ import pandas as pd
 
 st.title('청주 시외버스터미널 시간표')
 # CSV 파일 불러오기
-df = pd.read_csv('terminal_data.csv')  # CSV 파일 경로를 정확히 지정하세요.
+df = pd.read_csv('terminal_data.csv')  # 경로 지정
 
 # 터미널 리스트를 가져오기 (중복 제거)
 terminals = df['터미널'].unique()
@@ -18,7 +18,8 @@ if search_term:
 
 # 크롤링은 터미널 이름 출발; 시간; 요금; 소요시간;
 # 크롤링한 데이터를 마이sql 에 저장하고 저장한 테이블을
-# 데이터에 불러온다. # csv 로 활용
+# 데이터에 불러온다. 다실패
+# csv 로 활용
 selected_terminal = st.selectbox("터미널을 선택하세요",  filtered_terminals)
 
 # # 선택된 터미널에 해당하는 데이터 필터링
@@ -32,7 +33,8 @@ st.write(selected_data)
 
 # df = pd.DataFrame(data)
 
-# options=["","감곡시외터미널","강릉시외버스터미널","고양종합터미널","고한사북공영버스터미널"] # 옵션스에 마이 sql에 저장된 터미널이름
+# options=["","감곡시외터미널","강릉시외버스터미널","고양종합터미널","고한사북공영버스터미널"] 
+# # 옵션스에 마이 sql에 저장된 터미널이름
 
 
 # selected_option = st.selectbox("도착지 선택:", options)
